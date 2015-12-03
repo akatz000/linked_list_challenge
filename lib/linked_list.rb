@@ -17,8 +17,20 @@ class LinkedList
   def [](index)
     current_node = self.first_node
     index.times do
+      return nil if current_node.next_node == nil
       current_node = current_node.next_node
     end
     current_node
+  end
+
+  def to_s
+    string = "LinkedList("
+    current_node = first_node
+    while current_node.next_node
+      string += "#{current_node.info}, "
+      current_node = current_node.next_node
+    end
+    string += "#{current_node.info})"
+    string
   end
 end
