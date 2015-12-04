@@ -25,12 +25,15 @@ class LinkedList
 
   def to_s
     string = "LinkedList("
-    current_node = first_node
-    while current_node.next_node
-      string += "#{current_node.info}, "
-      current_node = current_node.next_node
+    if first_node
+      current_node = first_node
+      while current_node.next_node
+        string += "#{current_node.info}, "
+        current_node = current_node.next_node
+      end
+      string += "#{current_node.info}"
     end
-    string += "#{current_node.info})"
+    string += ")"
     string
   end
 end
