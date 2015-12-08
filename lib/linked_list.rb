@@ -36,4 +36,12 @@ class LinkedList
     string += ")"
     string
   end
+
+  def each
+    current_node = first_node
+    while current_node
+      yield(current_node)
+      current_node = current_node.next_node
+    end
+  end
 end
