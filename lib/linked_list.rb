@@ -44,4 +44,14 @@ class LinkedList
       current_node = current_node.next_node
     end
   end
+
+  def insert(position, info)
+    foo = Node.new(info)
+    foo.next_node = self[position]
+    if position == 0
+      self.first_node = foo
+    else
+      self[position - 1].next_node = foo
+    end
+  end
 end
