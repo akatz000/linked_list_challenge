@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'node'
 
 class LinkedList
@@ -9,8 +8,7 @@ class LinkedList
   end
 
   def prepend(info)
-    foo = Node.new(info)
-    foo.next_node = self.first_node
+    foo = Node.new(info, self.first_node)
     self.first_node = foo
   end
 
@@ -46,8 +44,7 @@ class LinkedList
   end
 
   def insert(position, info)
-    foo = Node.new(info)
-    foo.next_node = self[position]
+    foo = Node.new(info, self[position])
     if position == 0
       self.first_node = foo
     else
